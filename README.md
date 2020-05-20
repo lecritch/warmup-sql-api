@@ -33,7 +33,7 @@ conn = sqlite3.connect('chinook.db')
 Let's create a function called ```sql_df``` that returns a dataframe of a SQL query.
 
 <u>In the cell below:</u>
-1. Define a function called ```sql_df``` that takes in two parameter ```query```, and ```connection```.
+1. Define a function called ```sql_df``` that takes in two parameters ```query```, and ```connection```.
 2. Return a dataframe from the function using [pd.read_sql](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html)
 
 
@@ -53,7 +53,7 @@ We'll start with something simple for our first SQL query.
 <u>In the cell below:</u>
 1. Write a SQL query to collect all columns from the ```tracks``` table 
 2. ```LIMIT``` the query to only return two records from the table.
-3. Run the query through the ```sql_df``` function and Save the results as the variable ```first_query```.
+3. Run the query through the ```sql_df``` function and save the results as the variable ```first_query```.
 
 
 ```python
