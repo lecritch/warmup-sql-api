@@ -1,4 +1,3 @@
-
 # SQL and iTunes API
 
 ![](https://apple-resources.s3.amazonaws.com/medusa/production/images/5e28cacfd01ec800014020f4/en-us-large@1x.png)
@@ -15,6 +14,9 @@ import pandas as pd
 
 # API Connection
 import requests
+
+#for tests
+from test_background import test_obj_dict, run_test_dict, pkl_dump, run_test
 ```
 
 The database in stores within the ```data``` folder of this repo as ```chinook.db```
@@ -64,7 +66,7 @@ Run the cell below to see if your query returned the correct data!
 
 
 ```python
-#################### TEST HERE
+run_test(first_query, 'first_query')
 ```
 
 **Ok ok**
@@ -84,6 +86,8 @@ Let's do a more complex query.
         
 **Hint:** This will require you to first join the ```tracks``` and ```albums``` tables, and then join the ```artists``` table.
 
+We'll save the results of this query to the variable `df`
+
 
 ```python
 # Your code here
@@ -98,7 +102,7 @@ Run the cell below to see if you returned the correct results!
 
 
 ```python
-#################### TEST HERE
+run_test(df, 'query_to_df')
 ```
 
 <center><u>Our df variable is made up of a table with three columns</u></center>
@@ -150,7 +154,7 @@ Run the cell below to see if your ```req_string``` variable is correct!
 
 
 ```python
-#################### TEST HERE
+run_test(req_string, 'req_string')
 ```
 
 Now that we have our req_string, we can send our request to the API using the ```requests``` library.
@@ -160,7 +164,7 @@ Now that we have our req_string, we can send our request to the API using the ``
 req = requests.get(req_string).json()
 ```
 
-The data returned from the API is formatted as a ```json``` which for most intensive purposes is just a dictionary.
+The data returned from the API is formatted as a ```json``` which for most intents and purposes is just a dictionary.
 
 The information we want from this json is found with the ```'results'``` key.
 
@@ -209,7 +213,7 @@ Run the cell below to check if you collected the correct release dates!
 
 
 ```python
-#################### TEST HERE
+run_test(df, 'release_date')
 ```
 
 It looks like there are several ```None```'s in our ```release_date``` column. *And there is a reason for this.*
@@ -249,5 +253,5 @@ Run the cell below to see if you were successful!
 
 
 ```python
-#################### TEST HERE
+run_test(df, 'string_manip')
 ```
